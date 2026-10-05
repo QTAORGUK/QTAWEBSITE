@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "forklift-truck-operator-november-2026",
+    "course": "Forklift truck operator",
+    "window": "November 2026",
+    "location": "Venue to be confirmed",
+    "status": "DATE TBC",
+    "order": 1
+  },
+  {
+    "slug": "working-at-height-awareness-november-2026",
+    "course": "Working at height awareness",
+    "window": "November 2026",
+    "location": "Venue to be confirmed",
+    "status": "DATE TBC",
+    "order": 2
+  },
+  {
+    "slug": "abrasive-wheels-december-2026",
+    "course": "Abrasive wheels",
+    "window": "December 2026",
+    "location": "Venue to be confirmed",
+    "status": "DATE TBC",
+    "order": 3
+  },
+  {
+    "slug": "basic-instructor-january-2027",
+    "course": "Basic instructor",
+    "window": "January 2027",
+    "location": "Venue to be confirmed",
+    "status": "DATE TBC",
+    "order": 4
+  },
+  {
+    "slug": "construction-safety-pass-csp-january-2027",
+    "course": "Construction Safety Pass (CSP)",
+    "window": "January 2027",
+    "location": "Venue to be confirmed",
+    "status": "DATE TBC",
+    "order": 5
+  },
+  {
+    "slug": "cherry-picker-and-scissor-lift-february-2027",
+    "course": "Cherry picker and scissor lift",
+    "window": "February 2027",
+    "location": "Venue to be confirmed",
+    "status": "DATE TBC",
+    "order": 6
+  },
+  {
+    "slug": "10-day-safety-manager-spring-2027",
+    "course": "10 day safety manager",
+    "window": "Spring 2027",
+    "location": "Venue to be confirmed",
+    "status": "DATE TBC",
+    "order": 7
+  },
+  {
+    "slug": "level-3-diploma-in-instructing-spring-2027",
+    "course": "Level 3 Diploma in Instructing",
+    "window": "Spring 2027",
+    "location": "Venue to be confirmed",
+    "status": "DATE TBC",
+    "order": 8
+  }
+]

@@ -1,0 +1,17 @@
+Slug,Name,Category,Description,Law topics,Order
+overhead-crane,Overhead crane,Plant and lifting,"Pre-use checks, pendant and remote controls, slinging basics, safe travel of loads and what to do when a lift goes wrong.","lifting,equip",1
+forklift-truck,Forklift truck,Plant and lifting,"For new and experienced operators. Stability, pre-use inspection, stacking and de-stacking, loading vehicles and working around pedestrians.",trucks,2
+telehandler,Telehandler,Plant and lifting,"Load charts, reach and stability, rough ground, attachments and placing loads at height on site.","trucks,lifting",3
+cherry-picker,Cherry picker,Access and height,"Boom-type mobile elevating work platforms: setting up, harness use, overhead hazards, emergency lowering and rescue planning.","height,equip",4
+scissor-lift,Scissor lift,Access and height,"Vertical platforms: ground conditions, safe working load, guardrails, travelling raised and emergency lowering.","height,equip",5
+working-at-height-awareness,Working at height awareness,Access and height,"The avoid, prevent, minimise hierarchy, ladders and steps, fragile surfaces, edge protection and falling objects.",height,6
+confined-space-awareness,Confined space awareness,Awareness,"How to recognise a confined space, why people die in them, atmospheres, permits and why untrained rescue kills rescuers.",confined,7
+abrasive-wheels,Abrasive wheels,Awareness,"Wheel markings and speeds, inspection and the ring test, mounting, guarding, dressing and the right PPE.",abrasive,8
+construction-safety-pass-csp,Construction Safety Pass (CSP),Safety management,"QTA's accredited site safety course for anyone going onto a construction site: legal duties, common site hazards, behaviour and reporting.","construction,general",9
+10-day-safety-manager,10 day safety manager,Safety management,"Ten days for the person who will own safety in a business: law, risk management, policies, inspections, incident investigation and contractor control.","general,risk,construction",10
+risk-assessor-general,Risk assessor: general,Risk assessor,"Carry out and record suitable and sufficient workplace risk assessments, and keep them live.",risk,11
+risk-assessor-fire,Risk assessor: fire,Risk assessor,Carry out a structured fire risk assessment of simple premises and write an action plan a fire officer will accept.,fire,12
+risk-assessor-construction,Risk assessor: construction,Risk assessor,"Task and site-specific assessments, method statements and the duties each party holds on a project.","construction,risk",13
+risk-assessor-environmental,Risk assessor: environmental,Risk assessor,"Identify how a site can harm land, air and water, including spills, waste, drainage and discharges, and control it.","drain,coshh",14
+basic-instructor,Basic instructor,Instructor,"For skilled people who need to train others: lesson planning, demonstration, coaching, fair assessment and record keeping. Accredited through UK PAAS.",equip,15
+level-3-diploma-in-instructing,Level 3 Diploma in Instructing,Instructor,"The full route to instructing as a profession, building on the basic course with course design, quality assurance and assessment practice.",equip,16
