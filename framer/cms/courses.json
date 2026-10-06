@@ -1,0 +1,130 @@
+[
+  {
+    "slug": "overhead-crane",
+    "name": "Overhead crane",
+    "category": "Plant and lifting",
+    "description": "Pre-use checks, pendant and remote controls, slinging basics, safe travel of loads and what to do when a lift goes wrong.",
+    "lawTopics": "lifting,equip",
+    "order": 1
+  },
+  {
+    "slug": "forklift-truck",
+    "name": "Forklift truck",
+    "category": "Plant and lifting",
+    "description": "For new and experienced operators. Stability, pre-use inspection, stacking and de-stacking, loading vehicles and working around pedestrians.",
+    "lawTopics": "trucks",
+    "order": 2
+  },
+  {
+    "slug": "telehandler",
+    "name": "Telehandler",
+    "category": "Plant and lifting",
+    "description": "Load charts, reach and stability, rough ground, attachments and placing loads at height on site.",
+    "lawTopics": "trucks,lifting",
+    "order": 3
+  },
+  {
+    "slug": "cherry-picker",
+    "name": "Cherry picker",
+    "category": "Access and height",
+    "description": "Boom-type mobile elevating work platforms: setting up, harness use, overhead hazards, emergency lowering and rescue planning.",
+    "lawTopics": "height,equip",
+    "order": 4
+  },
+  {
+    "slug": "scissor-lift",
+    "name": "Scissor lift",
+    "category": "Access and height",
+    "description": "Vertical platforms: ground conditions, safe working load, guardrails, travelling raised and emergency lowering.",
+    "lawTopics": "height,equip",
+    "order": 5
+  },
+  {
+    "slug": "working-at-height-awareness",
+    "name": "Working at height awareness",
+    "category": "Access and height",
+    "description": "The avoid, prevent, minimise hierarchy, ladders and steps, fragile surfaces, edge protection and falling objects.",
+    "lawTopics": "height",
+    "order": 6
+  },
+  {
+    "slug": "confined-space-awareness",
+    "name": "Confined space awareness",
+    "category": "Awareness",
+    "description": "How to recognise a confined space, why people die in them, atmospheres, permits and why untrained rescue kills rescuers.",
+    "lawTopics": "confined",
+    "order": 7
+  },
+  {
+    "slug": "abrasive-wheels",
+    "name": "Abrasive wheels",
+    "category": "Awareness",
+    "description": "Wheel markings and speeds, inspection and the ring test, mounting, guarding, dressing and the right PPE.",
+    "lawTopics": "abrasive",
+    "order": 8
+  },
+  {
+    "slug": "construction-safety-pass-csp",
+    "name": "Construction Safety Pass (CSP)",
+    "category": "Safety management",
+    "description": "QTA's accredited site safety course for anyone going onto a construction site: legal duties, common site hazards, behaviour and reporting.",
+    "lawTopics": "construction,general",
+    "order": 9
+  },
+  {
+    "slug": "10-day-safety-manager",
+    "name": "10 day safety manager",
+    "category": "Safety management",
+    "description": "Ten days for the person who will own safety in a business: law, risk management, policies, inspections, incident investigation and contractor control.",
+    "lawTopics": "general,risk,construction",
+    "order": 10
+  },
+  {
+    "slug": "risk-assessor-general",
+    "name": "Risk assessor: general",
+    "category": "Risk assessor",
+    "description": "Carry out and record suitable and sufficient workplace risk assessments, and keep them live.",
+    "lawTopics": "risk",
+    "order": 11
+  },
+  {
+    "slug": "risk-assessor-fire",
+    "name": "Risk assessor: fire",
+    "category": "Risk assessor",
+    "description": "Carry out a structured fire risk assessment of simple premises and write an action plan a fire officer will accept.",
+    "lawTopics": "fire",
+    "order": 12
+  },
+  {
+    "slug": "risk-assessor-construction",
+    "name": "Risk assessor: construction",
+    "category": "Risk assessor",
+    "description": "Task and site-specific assessments, method statements and the duties each party holds on a project.",
+    "lawTopics": "construction,risk",
+    "order": 13
+  },
+  {
+    "slug": "risk-assessor-environmental",
+    "name": "Risk assessor: environmental",
+    "category": "Risk assessor",
+    "description": "Identify how a site can harm land, air and water, including spills, waste, drainage and discharges, and control it.",
+    "lawTopics": "drain,coshh",
+    "order": 14
+  },
+  {
+    "slug": "basic-instructor",
+    "name": "Basic instructor",
+    "category": "Instructor",
+    "description": "For skilled people who need to train others: lesson planning, demonstration, coaching, fair assessment and record keeping. Accredited through UK PAAS.",
+    "lawTopics": "equip",
+    "order": 15
+  },
+  {
+    "slug": "level-3-diploma-in-instructing",
+    "name": "Level 3 Diploma in Instructing",
+    "category": "Instructor",
+    "description": "The full route to instructing as a profession, building on the basic course with course design, quality assurance and assessment practice.",
+    "lawTopics": "equip",
+    "order": 16
+  }
+]
