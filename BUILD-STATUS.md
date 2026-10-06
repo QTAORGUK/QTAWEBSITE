@@ -14,15 +14,17 @@ Nothing has been published and no domain is connected. Both wait for Dan's sign-
 | Law line on cards | `framer/code/LawCite.tsx` | "Law in …: link · link · link". On course cards, bind **Topics** to the CMS field **Law topics** and turn on **Card rule**. On assessment cards use `risk`, `fire`, `coshh`, `drain`. |
 | Law boxes | `framer/code/LawBox.tsx` | Assessments: topics `risk,fire,coshh`, title "What the law asks of a small business". PPE: topics `ppe`, title "PPE law". |
 | Regulations table | `framer/code/LawTable.tsx` | Intro line plus the full table, scrolling inside its own box on phones. |
-| Courses CMS | `framer/cms/courses.json` / `.csv` | 16 courses: Name, Category, Description, Law topics. |
-| Dates CMS | `framer/cms/dates.json` / `.csv` | 8 rows: Course, Window, Location, Status. All "DATE TBC". |
+| Courses CMS | `framer/cms/courses.json` / `.csv` | 16 courses: Name, Category, Description, Law topics. **Already in the Framer project** (collection "Courses", field "Law Topics"); checked entry by entry against the prototype on 6 October 2026, all matching. |
+| Dates CMS | `framer/cms/dates.json` / `.csv` | 8 rows: Course, Window, Location, Status. All "DATE TBC". **Already in the Framer project** (collection "Dates"), all matching. |
 | Structured data | `framer/custom-code/head-end.html` | Organization and FAQPage JSON-LD; FAQ text taken word for word from the prototype. |
-| Setup script | `scripts/framer-setup.ts` | Uploads the code files, 16 colour styles (light and dark), both CMS collections and the head code. Has no publish, deploy or domain calls. |
+| Setup script | `scripts/framer-setup.ts` | Uploads the code files, 16 colour styles (light and dark), any CMS entries that are missing (matched by name, never overwriting what is in Framer), and the head code. Has no publish, deploy or domain calls. |
 | Link check | `scripts/check-links.mjs` | Opens all 52 links and writes `framer/link-check.md`. |
 
-Checks: `npm run check` (typecheck plus 14 tests that render each component for all three jurisdictions and compare its links with the prototype's).
+Checks: `npm run check` (typecheck plus 17 tests: each component rendered for all three jurisdictions and compared with the prototype's links, and the CMS step checked to add only missing entries).
 
 ## Blocked: needs access to Framer
+
+The Ryze connection to Framer (qta.org.uk) can read and add CMS entries and publish. It cannot add code components, colour styles or page layout, so it doesn't replace the steps below. Its publish action must not be used until Dan signs off.
 
 This build container can't reach framer.com, legislation.gov.uk, hse.gov.uk or the other official sites (blocked by the environment's network policy). To continue:
 

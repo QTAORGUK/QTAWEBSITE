@@ -69,26 +69,34 @@ async function collection(framer: Framer, name: string, fields: Parameters<Colle
     const all = await framer.getCollections()
     const col = all.find((c) => c.name === name) ?? (await framer.createCollection(name))
     const have = await col.getFields()
-    const missing = fields.filter((f) => !have.some((h) => h.name === f.name))
+    const missing = fields.filter((f) => !have.some((h) => same(h.name, f.name)))
     if (missing.length) await col.addFields(missing)
     return { col, fields: await col.getFields() }
 }
 
+// Field names are matched loosely: the project may already hold "Law Topics" for "Law topics".
+const same = (a: string, b: string) => a.trim().toLowerCase() === b.trim().toLowerCase()
+
 function byName(fields: Field[], name: string) {
-    const f = fields.find((x) => x.name === name)
+    const f = fields.find((x) => same(x.name, name))
     if (!f) throw new Error(`Field "${name}" missing`)
     return f
 }
 
-async function syncItems(col: Collection, items: { slug: string; fieldData: Record<string, any> }[]) {
-    const existing = await col.getItems()
-    const input = items.map((it) => {
-        const prev = existing.find((e) => e.slug === it.slug)
-        return prev ? { id: prev.id, fieldData: it.fieldData } : { slug: it.slug, fieldData: it.fieldData }
-    })
-    await col.addItems(input as any)
-    const after = await col.getItems()
-    await col.setItemOrder(items.map((it) => after.find((a) => a.slug === it.slug)!.id))
+// Adds only the items not already in the collection, matched on the text of the key
+// fields rather than the slug (items imported by hand get different slugs). Existing
+// items are never overwritten, so edits Dan makes in the Framer CMS survive a re-run.
+export async function addMissingItems(
+    col: Collection,
+    keyFieldIds: string[],
+    items: { slug: string; fieldData: Record<string, { type: string; value: string }> }[]
+) {
+    const key = (fd: Record<string, any>) => keyFieldIds.map((id) => String(fd[id]?.value ?? "").trim().toLowerCase()).join("|")
+    const existing = new Set((await col.getItems()).map((e) => key(e.fieldData)))
+    const slugs = new Set((await col.getItems()).map((e) => e.slug))
+    const missing = items.filter((it) => !existing.has(key(it.fieldData)) && !slugs.has(it.slug))
+    if (missing.length) await col.addItems(missing as any)
+    return missing.length
 }
 
 async function setupCourses(framer: Framer) {
@@ -104,12 +112,13 @@ async function setupCourses(framer: Framer) {
     const topics = byName(fields, "Law topics")
     if (cat.type !== "enum") throw new Error("Category must be an option field")
     const caseId = (n: string) => {
-        const c = cat.cases.find((x) => x.name === n)
+        const c = cat.cases.find((x) => same(x.name, n))
         if (!c) throw new Error(`Category option "${n}" missing; add it in Framer and re-run`)
         return c.id
     }
-    await syncItems(
+    const added = await addMissingItems(
         col,
+        [name.id],
         courses.map((c) => ({
             slug: c.slug,
             fieldData: {
@@ -120,7 +129,7 @@ async function setupCourses(framer: Framer) {
             },
         }))
     )
-    log(`cms: Courses, ${courses.length} items`)
+    log(`cms: Courses, ${added} added, ${courses.length - added} already there`)
 }
 
 async function setupDates(framer: Framer) {
@@ -131,8 +140,9 @@ async function setupDates(framer: Framer) {
         { type: "string", name: "Status" },
     ])
     const f = (n: string) => byName(fields, n).id
-    await syncItems(
+    const added = await addMissingItems(
         col,
+        [f("Course"), f("Window")],
         dates.map((d) => ({
             slug: d.slug,
             fieldData: {
@@ -143,7 +153,7 @@ async function setupDates(framer: Framer) {
             },
         }))
     )
-    log(`cms: Dates, ${dates.length} items`)
+    log(`cms: Dates, ${added} added, ${dates.length - added} already there`)
 }
 
 async function main() {
@@ -179,7 +189,9 @@ async function main() {
     }
 }
 
-main().catch((e) => {
-    console.error(e)
-    process.exit(1)
-})
+if (import.meta.url === `file://${process.argv[1]}`) {
+    main().catch((e) => {
+        console.error(e)
+        process.exit(1)
+    })
+}
